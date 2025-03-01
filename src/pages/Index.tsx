@@ -9,30 +9,32 @@ import Footer from "../components/Footer";
 
 const Index = () => {
   useEffect(() => {
+    // Set page title
+    document.title = "Game Portfolio | Unity Developer";
+    
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target && target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
         
-        const targetId = this.getAttribute('href');
+        const targetId = target.getAttribute('href');
         if (!targetId) return;
         
         const targetElement = document.querySelector(targetId);
         if (!targetElement) return;
         
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // Adjusted for navbar height
+          top: targetElement.getBoundingClientRect().top + window.scrollY - 80, // Adjusted for navbar height
           behavior: 'smooth'
         });
-      });
-    });
+      }
+    };
+    
+    document.addEventListener('click', handleAnchorClick);
     
     return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function (e) {
-          e.preventDefault();
-        });
-      });
+      document.removeEventListener('click', handleAnchorClick);
     };
   }, []);
 
