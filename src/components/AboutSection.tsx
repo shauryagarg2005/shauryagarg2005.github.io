@@ -2,18 +2,46 @@
 import { useRef, useEffect, useState } from "react";
 
 const skills = [
-  { name: "Game Design", level: 90 },
-  { name: "Unity", level: 85 },
-  { name: "Unreal Engine", level: 75 },
-  { name: "3D Modeling", level: 70 },
-  { name: "C#", level: 80 },
-  { name: "C++", level: 65 },
+  { name: "Unity (C#)", level: 90 },
+  { name: "Game Mechanics Design", level: 85 },
+  { name: "UI/UX Development", level: 80 },
+  { name: "Physics-Based Gameplay", level: 85 },
+  { name: "Mobile Game Development", level: 80 },
+  { name: "Custom Input Systems", level: 75 },
+];
+
+const projects = [
+  {
+    title: "Spike Jukes",
+    status: "Released & Maintained",
+    platform: "Android",
+    description: "Hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score."
+  },
+  {
+    title: "Skyway Stunts",
+    status: "In Development",
+    platform: "Android",
+    description: "Racing & stunt-based driving game featuring realistic physics, jumps, drifts, and precision driving."
+  },
+  {
+    title: "Color Block Jam Replica",
+    status: "In Development",
+    platform: "Android",
+    description: "Puzzle/hyper-casual game where players match colored blocks by moving them into correct slots."
+  },
+  {
+    title: "Block-Based Hyper-Casual Game",
+    status: "In Development",
+    platform: "Android",
+    description: "Physics-based block puzzle game with simple yet addictive mechanics for quick gaming sessions."
+  }
 ];
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,24 +72,45 @@ const AboutSection = () => {
       className="py-24 sm:py-32 bg-secondary/30"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className={`transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             <span className="inline-block px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full mb-4">
               About Me
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Passionate Game Developer & Designer
+              Unity Game Developer & Designer
             </h2>
             <p className="text-muted-foreground mb-6 text-balance">
-              With over 5 years of experience in game development, I've dedicated my career to creating
-              engaging and immersive gaming experiences. My passion lies in blending innovative gameplay
-              mechanics with compelling narratives.
+              Experienced Unity Developer, proficient in C# programming and game mechanics design.
+              I specialize in custom input systems, UI/UX development, and game physics with a focus
+              on vehicle physics and racing mechanics.
             </p>
-            <p className="text-muted-foreground mb-8 text-balance">
-              I specialize in developing games across multiple platforms using industry-standard
-              engines and tools. My background in both design and programming allows me to bridge
-              the gap between creative vision and technical implementation.
+            <p className="text-muted-foreground mb-6 text-balance">
+              My expertise spans mobile (Android) and PC game development, including Steam publishing.
+              I focus on creating engaging gameplay experiences while implementing effective monetization
+              strategies like in-app purchases (IAP) and paid Unity asset development.
             </p>
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4">Current Projects</h3>
+              <div className="space-y-4">
+                {projects.map((project, index) => (
+                  <div key={index} className="bg-background/50 rounded-lg p-4 border border-border">
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="font-medium">{project.title}</h4>
+                      <div className="flex items-center">
+                        <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary mr-2">
+                          {project.status}
+                        </span>
+                        <span className="text-xs px-2 py-1 rounded-full bg-secondary">
+                          {project.platform}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{project.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
@@ -82,7 +131,7 @@ const AboutSection = () => {
             ref={skillsRef}
             className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
           >
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm">
+            <div className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm mb-8">
               <h3 className="text-xl font-semibold mb-6">Technical Skills</h3>
               <div className="space-y-6">
                 {skills.map((skill, index) => (
@@ -102,6 +151,30 @@ const AboutSection = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold mb-6">Expertise Areas</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-2">
+                  <div className="font-medium">Game Development</div>
+                  <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside ml-1">
+                    <li>Custom Input Systems</li>
+                    <li>UI/UX Development</li>
+                    <li>Physics-Based Gameplay</li>
+                    <li>Camera Control Systems</li>
+                  </ul>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="font-medium">Game Design</div>
+                  <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside ml-1">
+                    <li>Hyper-Casual Mechanics</li>
+                    <li>Racing Game Physics</li>
+                    <li>In-App Purchases (IAP)</li>
+                    <li>Unity Utility Development</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
