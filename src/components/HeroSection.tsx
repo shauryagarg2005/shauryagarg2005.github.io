@@ -7,21 +7,37 @@ const HeroSection = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Ensure elements are visible even if animation fails
+    const elements = [titleRef.current, subtitleRef.current, ctaRef.current];
+    
+    // Add animation classes with timeouts
     if (titleRef.current) {
+      titleRef.current.style.opacity = "1";
       titleRef.current.classList.add("animate-fade-in");
     }
     
     setTimeout(() => {
       if (subtitleRef.current) {
+        subtitleRef.current.style.opacity = "1";
         subtitleRef.current.classList.add("animate-fade-in");
       }
     }, 200);
     
     setTimeout(() => {
       if (ctaRef.current) {
+        ctaRef.current.style.opacity = "1";
         ctaRef.current.classList.add("animate-fade-in");
       }
     }, 400);
+
+    // Cleanup function to remove animation classes
+    return () => {
+      elements.forEach(el => {
+        if (el) {
+          el.classList.remove("animate-fade-in");
+        }
+      });
+    };
   }, []);
 
   return (
@@ -34,19 +50,19 @@ const HeroSection = () => {
         <div className="max-w-4xl">
           <h1 
             ref={titleRef}
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 tracking-tight"
+            className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 tracking-tight transition-opacity duration-300"
           >
             Crafting immersive game experiences
           </h1>
           <p 
             ref={subtitleRef}
-            className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 text-balance max-w-2xl"
+            className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 text-balance max-w-2xl transition-opacity duration-300"
           >
             A game developer portfolio showcasing innovative projects with a focus on gameplay mechanics and visual aesthetics.
           </p>
           <div 
             ref={ctaRef}
-            className="opacity-0"
+            className="opacity-0 transition-opacity duration-300"
           >
             <a 
               href="#projects" 
