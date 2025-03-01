@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useState } from "react";
 
 const skills = [
@@ -28,12 +27,6 @@ const projects = [
     status: "In Development",
     platform: "Android",
     description: "Puzzle/hyper-casual game where players match colored blocks by moving them into correct slots."
-  },
-  {
-    title: "Block-Based Hyper-Casual Game",
-    status: "In Development",
-    platform: "Android",
-    description: "Physics-based block puzzle game with simple yet addictive mechanics for quick gaming sessions."
   }
 ];
 
