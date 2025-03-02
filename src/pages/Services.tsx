@@ -10,7 +10,7 @@ const Services = () => {
     window.scrollTo(0, 0);
     
     // Set page title
-    document.title = "Services | Game Portfolio";
+    document.title = "Services | Shaurya Garg";
   }, []);
 
   return (

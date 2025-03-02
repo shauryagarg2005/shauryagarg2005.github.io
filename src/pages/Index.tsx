@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
@@ -11,7 +10,7 @@ import Footer from "../components/Footer";
 const Index = () => {
   useEffect(() => {
     // Set page title
-    document.title = "Game Portfolio | Unity Developer";
+    document.title = "Shaurya Garg | Unity Developer";
     
     // Smooth scroll for anchor links
     const handleAnchorClick = (e: MouseEvent) => {

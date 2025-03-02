@@ -10,7 +10,7 @@ const About = () => {
     window.scrollTo(0, 0);
     
     // Set page title
-    document.title = "About | Game Portfolio";
+    document.title = "About | Shaurya Garg";
   }, []);
 
   return (

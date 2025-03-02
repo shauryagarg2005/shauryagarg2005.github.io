@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -81,7 +82,7 @@ const ProjectDetails = () => {
     window.scrollTo(0, 0);
     
     // Set page title
-    document.title = project ? `${project.title} | Game Portfolio` : "Project Not Found | Game Portfolio";
+    document.title = project ? `${project.title} | Shaurya Garg` : "Project Not Found | Shaurya Garg";
   }, [project]);
 
   if (!project) {

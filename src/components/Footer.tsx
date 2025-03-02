@@ -1,4 +1,3 @@
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -8,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <div className="font-display text-xl font-medium tracking-tight mb-2">
-              Game Portfolio
+              Shaurya Garg
             </div>
             <p className="text-sm text-muted-foreground">
               Creating immersive gaming experiences
@@ -104,7 +103,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Game Portfolio. All rights reserved.
+              © {currentYear} Shaurya Garg. All rights reserved.
             </p>
           </div>
           

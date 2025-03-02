@@ -37,7 +37,7 @@ const Projects = () => {
     window.scrollTo(0, 0);
     
     // Set page title
-    document.title = "Projects | Game Portfolio";
+    document.title = "Projects | Shaurya Garg";
   }, []);
 
   return (
