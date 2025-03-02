@@ -1,5 +1,4 @@
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -23,7 +22,12 @@ const projects = [
       "Explore potential monetization (ads, cosmetics, or in-app purchases)"
     ],
     imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.NightScream.SpikeJukes"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.NightScream.SpikeJukes",
+    screenshots: [
+      "/lovable-uploads/adc2c3b5-12ed-4b1d-85d6-57b487f4bd64.png",
+      "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png",
+      "/lovable-uploads/32c1ed10-4b05-406b-9412-174f08364440.png"
+    ]
   },
   {
     id: "skyway-stunts",
@@ -70,6 +74,7 @@ const projects = [
 const ProjectDetails = () => {
   const { projectId } = useParams();
   const project = projects.find(p => p.id === projectId);
+  const [activeScreenshot, setActiveScreenshot] = useState(0);
 
   useEffect(() => {
     // Scroll to top when the component mounts
@@ -186,13 +191,43 @@ const ProjectDetails = () => {
             </div>
             
             <div className="relative">
-              <div className="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="object-cover w-full h-full"
-                />
-              </div>
+              {project.id === "spike-jukes" && project.screenshots && project.screenshots.length > 0 ? (
+                <div className="space-y-4">
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img
+                      src={project.screenshots[activeScreenshot]}
+                      alt={`${project.title} Screenshot ${activeScreenshot + 1}`}
+                      className="object-contain w-full h-auto mx-auto"
+                      style={{ maxHeight: '500px' }}
+                    />
+                  </div>
+                  <div className="flex space-x-2 overflow-x-auto pb-2">
+                    {project.screenshots.map((screenshot, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActiveScreenshot(index)}
+                        className={`flex-shrink-0 w-16 h-16 rounded overflow-hidden border-2 transition-all ${
+                          index === activeScreenshot ? 'border-primary' : 'border-transparent'
+                        }`}
+                      >
+                        <img
+                          src={screenshot}
+                          alt={`Thumbnail ${index + 1}`}
+                          className="object-cover w-full h-full"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              )}
             </div>
           </div>
           
