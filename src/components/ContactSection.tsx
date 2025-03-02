@@ -105,7 +105,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-1">Location</h3>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Delhi, India</p>
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-1">Phone</h3>
-                  <p className="text-muted-foreground">(123) 456-7890</p>
+                  <p className="text-muted-foreground">+91 9654302489</p>
                 </div>
               </div>
             </div>

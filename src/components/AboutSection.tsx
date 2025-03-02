@@ -1,3 +1,4 @@
+
 import { useRef, useEffect, useState } from "react";
 
 const skills = [
@@ -12,9 +13,10 @@ const skills = [
 const projects = [
   {
     title: "Spike Jukes",
-    status: "Released & Maintained",
+    status: "Released",
     platform: "Android",
-    description: "Hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score."
+    description: "Hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score.",
+    storeLink: "https://play.google.com/store/apps/details?id=com.NightScream.SpikeJukes"
   },
   {
     title: "Skyway Stunts",
@@ -74,7 +76,7 @@ const AboutSection = () => {
               Unity Game Developer & Designer
             </h2>
             <p className="text-muted-foreground mb-6 text-balance">
-              Experienced Unity Developer, proficient in C# programming and game mechanics design.
+              Experienced Unity Developer from Delhi, India. I'm Shaurya Garg, proficient in C# programming and game mechanics design.
               I specialize in custom input systems, UI/UX development, and game physics with a focus
               on vehicle physics and racing mechanics.
             </p>
@@ -100,6 +102,21 @@ const AboutSection = () => {
                       </div>
                     </div>
                     <p className="text-sm text-muted-foreground">{project.description}</p>
+                    {project.storeLink && (
+                      <div className="mt-2">
+                        <a 
+                          href={project.storeLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-xs px-3 py-1 bg-primary text-white rounded-full inline-flex items-center gap-1 hover:bg-primary/90 transition-colors"
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 16L16 12M16 12L12 8M16 12H8M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          Play Store
+                        </a>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
