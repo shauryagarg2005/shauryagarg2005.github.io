@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Home } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -39,10 +40,24 @@ const Navbar = () => {
           </Link>
           <div className="hidden md:flex items-center space-x-8">
             <Link 
+              to="/" 
+              className="flex items-center text-sm font-medium underline-animation"
+              aria-label="Home"
+            >
+              <Home size={18} className="mr-1" />
+              <span>Home</span>
+            </Link>
+            <Link 
               to="/projects" 
               className="text-sm font-medium underline-animation"
             >
               Projects
+            </Link>
+            <Link 
+              to="/services" 
+              className="text-sm font-medium underline-animation"
+            >
+              Services
             </Link>
             <Link 
               to="/about" 
@@ -106,11 +121,26 @@ const Navbar = () => {
         <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
           <div className="max-w-7xl mx-auto px-6 py-4 space-y-3">
             <Link 
+              to="/" 
+              className="flex items-center py-2 text-sm font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Home size={18} className="mr-2" />
+              Home
+            </Link>
+            <Link 
               to="/projects" 
               className="block py-2 text-sm font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Projects
+            </Link>
+            <Link 
+              to="/services" 
+              className="block py-2 text-sm font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Services
             </Link>
             <Link 
               to="/about" 
