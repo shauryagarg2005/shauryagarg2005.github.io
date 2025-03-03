@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -70,8 +72,10 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            <ThemeToggle />
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-4">
+            <ThemeToggle />
             <button 
               className="p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
