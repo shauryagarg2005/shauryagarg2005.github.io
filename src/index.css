@@ -105,16 +105,19 @@
   }
   
   /* Improved button styling for better text visibility */
-  .bg-primary, .bg-secondary, .bg-accent {
-    @apply text-white;
+  .bg-primary {
+    @apply text-primary-foreground;
   }
   
-  /* Ensure dark mode button text is visible */
-  .dark .bg-primary, .dark .bg-secondary, .dark .bg-accent {
-    @apply text-white;
+  .bg-secondary {
+    @apply text-secondary-foreground;
   }
   
-  /* Additional contrast for interactive elements */
+  .bg-accent {
+    @apply text-accent-foreground;
+  }
+  
+  /* Default button styling */
   button, 
   [type='button'], 
   [type='reset'], 
@@ -122,11 +125,29 @@
     @apply font-medium;
   }
   
-  /* Improve contrast on hover states */
+  /* Improve contact button visibility */
+  .bg-white, .bg-background {
+    @apply text-foreground;
+  }
+  
+  /* Ensure primary buttons have proper text contrast */
+  .inline-flex.bg-primary, 
+  .inline-flex.items-center.justify-center.bg-primary,
+  a.bg-primary {
+    @apply text-primary-foreground;
+  }
+  
+  /* Specific fix for Get in Touch button */
+  a.inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
+    @apply text-white;
+  }
+  
+  /* Hover states with good contrast */
   button:hover, 
   [type='button']:hover, 
   [type='reset']:hover, 
-  [type='submit']:hover {
+  [type='submit']:hover,
+  a.bg-primary:hover {
     @apply text-white;
   }
 }
