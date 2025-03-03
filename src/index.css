@@ -103,4 +103,30 @@
       transform: translateY(0);
     }
   }
+  
+  /* Improved button styling for better text visibility */
+  .bg-primary, .bg-secondary, .bg-accent {
+    @apply text-white;
+  }
+  
+  /* Ensure dark mode button text is visible */
+  .dark .bg-primary, .dark .bg-secondary, .dark .bg-accent {
+    @apply text-white;
+  }
+  
+  /* Additional contrast for interactive elements */
+  button, 
+  [type='button'], 
+  [type='reset'], 
+  [type='submit'] {
+    @apply font-medium;
+  }
+  
+  /* Improve contrast on hover states */
+  button:hover, 
+  [type='button']:hover, 
+  [type='reset']:hover, 
+  [type='submit']:hover {
+    @apply text-white;
+  }
 }
