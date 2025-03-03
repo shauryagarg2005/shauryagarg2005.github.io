@@ -151,6 +151,16 @@
     @apply text-white;
   }
   
+  /* Specific fix for Get in Touch button in dark mode */
+  .dark a.inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
+    @apply text-white !important;
+  }
+  
+  /* Also target the Send Message button in the contact form */
+  .dark button.w-full.inline-flex.items-center.justify-center.h-12.px-6.font-medium.tracking-wide.bg-primary {
+    @apply text-white !important;
+  }
+  
   /* Hover states with good contrast */
   button:hover, 
   [type='button']:hover, 
