@@ -137,7 +137,16 @@
     @apply text-primary-foreground;
   }
   
-  /* Specific fix for Get in Touch button */
+  /* Dark mode specific button fixes */
+  .dark .bg-primary {
+    @apply text-white;
+  }
+  
+  .dark .bg-secondary {
+    @apply text-black;
+  }
+  
+  /* Fix for Get in Touch button in both modes */
   a.inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
     @apply text-white;
   }
@@ -148,6 +157,13 @@
   [type='reset']:hover, 
   [type='submit']:hover,
   a.bg-primary:hover {
+    @apply text-white;
+  }
+  
+  .dark button:hover, 
+  .dark [type='button']:hover, 
+  .dark [type='reset']:hover, 
+  .dark [type='submit']:hover {
     @apply text-white;
   }
 }
