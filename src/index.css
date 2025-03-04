@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -125,6 +124,15 @@
     @apply font-medium;
   }
   
+  /* Buttons with light background color (#f8fafc) should have dark text (#020817) */
+  button.bg-[#f8fafc],
+  [type='button'].bg-[#f8fafc],
+  [type='reset'].bg-[#f8fafc],
+  [type='submit'].bg-[#f8fafc],
+  a.bg-[#f8fafc] {
+    @apply text-[#020817];
+  }
+  
   /* Improve contact button visibility */
   .bg-white, .bg-background {
     @apply text-foreground;
@@ -139,15 +147,6 @@
   
   /* Dark mode specific button fixes */
   .dark .bg-primary {
-    @apply text-white;
-  }
-  
-  .dark .bg-secondary {
-    @apply text-black;
-  }
-  
-  /* Fix for Get in Touch button in both modes */
-  a.inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
     @apply text-white;
   }
   

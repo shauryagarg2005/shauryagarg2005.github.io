@@ -1,16 +1,22 @@
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const backgroundImages = [
+  "/lovable-uploads/32c1ed10-4b05-406b-9412-174f08364440.png",
+  "/lovable-uploads/adc2c3b5-12ed-4b1d-85d6-57b487f4bd64.png",
+  "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png"
+];
 
 const HeroSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    // Ensure elements are visible even if animation fails
+    // Animation for hero elements
     const elements = [titleRef.current, subtitleRef.current, ctaRef.current];
     
-    // Add animation classes with timeouts
     if (titleRef.current) {
       titleRef.current.style.opacity = "1";
       titleRef.current.classList.add("animate-fade-in");
@@ -30,20 +36,36 @@ const HeroSection = () => {
       }
     }, 400);
 
-    // Cleanup function to remove animation classes
+    // Image slider
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
     return () => {
       elements.forEach(el => {
         if (el) {
           el.classList.remove("animate-fade-in");
         }
       });
+      clearInterval(imageInterval);
     };
   }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
+        {backgroundImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center bg-no-repeat ${
+              index === currentImageIndex ? "opacity-70" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/70 to-background" />
       </div>
       
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24 md:py-32 relative z-10">
