@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -158,6 +159,11 @@
   /* Also target the Send Message button in the contact form */
   .dark button.w-full.inline-flex.items-center.justify-center.h-12.px-6.font-medium.tracking-wide.bg-primary {
     @apply text-white !important;
+  }
+  
+  /* Improve "View Projects" button visibility in dark mode */
+  .dark a[href="#projects"].inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
+    @apply bg-[#333333] text-white border border-white/20 hover:bg-[#444444] !important;
   }
   
   /* Hover states with good contrast */
