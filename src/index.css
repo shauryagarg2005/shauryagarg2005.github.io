@@ -172,7 +172,8 @@
   }
   
   /* Improve "About Me" button visibility in dark mode */
-  .dark span.inline-block.px-3.py-1.text-sm.font-medium.bg-primary.text-primary-foreground.rounded-full.mb-4 {
+  /* Fix: Changed selector to avoid circular dependency with text-primary-foreground */
+  .dark span.inline-block.px-3.py-1.text-sm.font-medium.bg-primary.rounded-full.mb-4 {
     @apply bg-[#333333] text-white border border-white/20 !important;
   }
   
