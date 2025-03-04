@@ -178,7 +178,8 @@
   }
   
   /* Improve "Play Store" button visibility in dark mode */
-  .dark a.text-xs.px-3.py-1.bg-primary.text-white.rounded-full.inline-flex.items-center.gap-1 {
+  /* Fix: Changed selector to avoid circular dependency with text-white */
+  .dark a.text-xs.px-3.py-1.bg-primary.rounded-full.inline-flex.items-center.gap-1 {
     @apply bg-[#333333] text-white border border-white/20 hover:bg-[#444444] !important;
   }
   
