@@ -10,35 +10,10 @@ const skills = [
   { name: "Custom Input Systems", level: 75 },
 ];
 
-const projects = [
-  {
-    title: "Spike Jukes",
-    status: "Released",
-    platform: "Android",
-    description: "Hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score.",
-    storeLink: "https://play.google.com/store/apps/details?id=com.NightScream.SpikeJukes"
-  },
-  {
-    title: "Skyway Stunts",
-    status: "In Development",
-    platform: "Android",
-    description: "Racing & stunt-based driving game featuring realistic physics, jumps, drifts, and precision driving.",
-    storeLink: "https://shaurya-garg.itch.io/skyway-stunts",
-    storeLinkText: "Play on itch.io"
-  },
-  {
-    title: "Color Block Jam Replica",
-    status: "In Development",
-    platform: "Android",
-    description: "Puzzle/hyper-casual game where players match colored blocks by moving them into correct slots."
-  }
-];
-
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,42 +62,6 @@ const AboutSection = () => {
               I focus on creating engaging gameplay experiences while implementing effective monetization
               strategies like in-app purchases (IAP) and paid Unity asset development.
             </p>
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4">Current Projects</h3>
-              <div className="space-y-4">
-                {projects.map((project, index) => (
-                  <div key={index} className="bg-background/50 rounded-lg p-4 border border-border">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-medium">{project.title}</h4>
-                      <div className="flex items-center">
-                        <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary mr-2">
-                          {project.status}
-                        </span>
-                        <span className="text-xs px-2 py-1 rounded-full bg-secondary">
-                          {project.platform}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{project.description}</p>
-                    {project.storeLink && (
-                      <div className="mt-2">
-                        <a 
-                          href={project.storeLink} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-xs px-3 py-1 bg-primary rounded-full inline-flex items-center gap-1 hover:bg-primary/90 transition-colors"
-                        >
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 16L16 12M16 12L12 8M16 12H8M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                          {project.storeLinkText || "Play Store"}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
