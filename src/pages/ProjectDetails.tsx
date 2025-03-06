@@ -48,8 +48,11 @@ const projects = [
       "Expand vehicle customization options",
       "Finalize monetization strategy"
     ],
-    imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
-    itchioUrl: "https://shaurya-garg.itch.io/skyway-stunts"
+    imageUrl: "/lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png",
+    itchioUrl: "https://shaurya-garg.itch.io/skyway-stunts",
+    screenshots: [
+      "/lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png"
+    ]
   },
   {
     id: "color-block-jam",

@@ -4,22 +4,22 @@ import GameCard from "./GameCard";
 
 const games = [
   {
-    title: "Cosmic Explorer",
-    description: "A space exploration game with procedurally generated galaxies and immersive storyline.",
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-    technologies: ["Unity", "C#", "ProBuilder"]
+    title: "Spike Jukes",
+    description: "A hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score.",
+    imageUrl: "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png",
+    technologies: ["Unity", "C#", "Mobile"]
   },
   {
-    title: "Forgotten Realms",
-    description: "Fantasy RPG with a unique combat system and character progression.",
-    imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
-    technologies: ["Unreal Engine", "Blueprint", "Maya"]
+    title: "Skyway Stunts",
+    description: "Racing & stunt-based driving game featuring realistic physics, jumps, drifts, and precision driving.",
+    imageUrl: "/lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png",
+    technologies: ["Unity", "C#", "Physics"]
   },
   {
-    title: "Cyber Nexus",
-    description: "Cyberpunk-themed action game with hacking mechanics and futuristic cityscapes.",
+    title: "Color Block Jam Replica",
+    description: "Puzzle/hyper-casual game where players match colored blocks by moving them into correct slots.",
     imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-    technologies: ["Godot", "GDScript", "Blender"]
+    technologies: ["Unity", "C#", "Puzzle"]
   },
   {
     title: "Puzzle Dimensions",

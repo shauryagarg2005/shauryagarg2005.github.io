@@ -11,7 +11,7 @@ const projects = [
     description: "Hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score.",
     status: "Released & Maintained",
     platform: "Android",
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
+    imageUrl: "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png"
   },
   {
     id: "skyway-stunts",
@@ -19,7 +19,7 @@ const projects = [
     description: "Racing & stunt-based driving game featuring realistic physics, jumps, drifts, and precision driving.",
     status: "In Development",
     platform: "Android",
-    imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+    imageUrl: "/lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png"
   },
   {
     id: "color-block-jam",

@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 const backgroundImages = [
   "/lovable-uploads/32c1ed10-4b05-406b-9412-174f08364440.png",
   "/lovable-uploads/adc2c3b5-12ed-4b1d-85d6-57b487f4bd64.png",
-  "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png"
+  "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png",
+  "/lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png"
 ];
 
 const HeroSection = () => {
