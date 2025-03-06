@@ -50,6 +50,42 @@ const GameCard = ({ title, description, imageUrl, technologies, index }: GameCar
     };
   }, []);
 
+  // Function to render external link based on title
+  const renderExternalLink = () => {
+    if (title === "Spike Jukes") {
+      return (
+        <a 
+          href="https://play.google.com/store/apps/details?id=com.NightScream.SpikeJukes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs px-3 py-1 bg-primary rounded-full inline-flex items-center gap-1 hover:bg-primary/90 transition-colors mr-3"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16L16 12M16 12L12 8M16 12H8M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          Play Store
+        </a>
+      );
+    } else if (title === "Skyway Stunts") {
+      return (
+        <a 
+          href="https://shaurya-garg.itch.io/skyway-stunts"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs px-3 py-1 bg-primary rounded-full inline-flex items-center gap-1 hover:bg-primary/90 transition-colors mr-3"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16L16 12M16 12L12 8M16 12H8M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          itch.io
+        </a>
+      );
+    }
+    return null;
+  };
+
   return (
     <div
       ref={cardRef}
@@ -80,28 +116,31 @@ const GameCard = ({ title, description, imageUrl, technologies, index }: GameCar
           ))}
         </div>
         
-        <Link 
-          to={`/project/${projectId}`}
-          className="inline-flex items-center text-sm font-medium text-primary hover:underline"
-        >
-          View Details
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="ml-1"
+        <div className="flex items-center">
+          {renderExternalLink()}
+          <Link 
+            to={`/project/${projectId}`}
+            className="inline-flex items-center text-sm font-medium text-primary hover:underline"
           >
-            <path
-              d="M5 12H19M19 12L12 5M19 12L12 19"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </Link>
+            View Details
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="ml-1"
+            >
+              <path
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
       </div>
     </div>
   );
