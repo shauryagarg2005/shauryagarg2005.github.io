@@ -1,33 +1,7 @@
 
 import { useRef } from "react";
-import GameCard from "./GameCard";
-
-const games = [
-  {
-    title: "Spike Jukes",
-    description: "A hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score.",
-    imageUrl: "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png",
-    technologies: ["Unity", "C#", "Mobile"]
-  },
-  {
-    title: "Skyway Stunts",
-    description: "Racing & stunt-based driving game featuring realistic physics, jumps, drifts, and precision driving.",
-    imageUrl: "/lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png",
-    technologies: ["Unity", "C#", "Physics"]
-  },
-  {
-    title: "Color Block Jam Replica",
-    description: "Puzzle/hyper-casual game where players match colored blocks by moving them into correct slots.",
-    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-    technologies: ["Unity", "C#", "Puzzle"]
-  },
-  {
-    title: "Puzzle Dimensions",
-    description: "Mind-bending puzzle game that manipulates space and time to solve challenges.",
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-    technologies: ["Unity", "C#", "Shader Graph"]
-  }
-];
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const ProjectSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -46,30 +20,19 @@ const ProjectSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {games.map((game, index) => (
-            <GameCard
-              key={index}
-              title={game.title}
-              description={game.description}
-              imageUrl={game.imageUrl}
-              technologies={game.technologies}
-              index={index}
-            />
-          ))}
-          
-          <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1 h-full">
-            <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-secondary/50 rounded-xl border border-border">
-              <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
+        <div className="flex flex-col items-center justify-center">
+          <div className="max-w-3xl w-full p-12 bg-secondary/30 rounded-2xl border border-border shadow-sm">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center mb-6">
                 <svg
-                  width="24"
-                  height="24"
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12 5V19M5 12H19"
+                    d="M21 12L13 12M21 6L13 6M21 18L13 18M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12ZM7 6C7 6.55228 6.55228 7 6 7C5.44772 7 5 6.55228 5 6C5 5.44772 5.44772 5 6 5C6.55228 5 7 5.44772 7 6ZM7 18C7 18.5523 6.55228 19 6 19C5.44772 19 5 18.5523 5 18C5 17.4477 5.44772 17 6 17C6.55228 17 7 17.4477 7 18Z"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -77,10 +40,17 @@ const ProjectSection = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">More Coming Soon</h3>
-              <p className="text-muted-foreground text-center text-sm">
-                New projects are in development and will be added to the portfolio soon.
+              <h3 className="text-2xl font-bold mb-4">Explore My Game Portfolio</h3>
+              <p className="text-muted-foreground mb-8 max-w-lg">
+                View my complete collection of game development projects, including 
+                released titles and works in progress. Each project showcases different 
+                aspects of game design, programming, and visual aesthetics.
               </p>
+              <Link to="/projects">
+                <Button size="lg" className="font-medium">
+                  View All Projects
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
