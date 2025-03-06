@@ -72,10 +72,10 @@ const Projects = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute top-3 left-3 z-20 flex gap-2">
-                    <span className="inline-block px-2 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-full">
+                    <span className="inline-block px-2 py-1 text-xs font-medium bg-primary/90 text-primary-foreground rounded-full">
                       {project.status}
                     </span>
-                    <span className="inline-block px-2 py-1 text-xs font-medium bg-secondary rounded-full">
+                    <span className="inline-block px-2 py-1 text-xs font-medium bg-secondary/90 rounded-full">
                       {project.platform}
                     </span>
                   </div>

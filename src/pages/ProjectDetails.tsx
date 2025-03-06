@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -138,10 +139,10 @@ const ProjectDetails = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-start">
             <div>
               <div className="flex items-center mb-4">
-                <span className="inline-block px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full mr-3">
+                <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/90 text-primary-foreground rounded-full mr-3">
                   {project.status}
                 </span>
-                <span className="inline-block px-3 py-1 text-sm font-medium bg-secondary rounded-full">
+                <span className="inline-block px-3 py-1 text-sm font-medium bg-secondary/90 rounded-full">
                   {project.platform}
                 </span>
               </div>
