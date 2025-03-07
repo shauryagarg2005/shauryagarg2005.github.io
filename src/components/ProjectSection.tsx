@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const ProjectSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -47,8 +48,12 @@ const ProjectSection = () => {
                 aspects of game design, programming, and visual aesthetics.
               </p>
               <Link to="/projects">
-                <Button size="lg" className="font-medium">
+                <Button 
+                  size="lg" 
+                  className="font-medium group transition-all duration-300 hover:translate-x-1"
+                >
                   View All Projects
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
             </div>
