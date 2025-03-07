@@ -1,3 +1,4 @@
+
 import { useState, useRef } from "react";
 import { toast } from "sonner";
 
@@ -70,7 +71,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-1">Email</h3>
-                  <p className="text-muted-foreground">gargshaurya2005@gmail.com</p>
+                  <p className="text-muted-foreground">contact@gameportfolio.com</p>
                 </div>
               </div>
             </div>
