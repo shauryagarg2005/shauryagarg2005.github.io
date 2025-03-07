@@ -9,7 +9,7 @@ const projects = [
     id: "spike-jukes",
     title: "Spike Jukes",
     description: "Hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score.",
-    status: "Released & Maintained",
+    status: "Released",
     platform: "Android",
     imageUrl: "/lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png"
   },
@@ -17,13 +17,13 @@ const projects = [
     id: "skyway-stunts",
     title: "Skyway Stunts",
     description: "Racing & stunt-based driving game featuring realistic physics, jumps, drifts, and precision driving.",
-    status: "In Development",
+    status: "Released",
     platform: "Android",
     imageUrl: "/lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png"
   },
   {
     id: "color-block-jam",
-    title: "Color Block Jam Replica",
+    title: "Color Block Jam",
     description: "Puzzle/hyper-casual game where players match colored blocks by moving them into correct slots.",
     status: "In Development",
     platform: "Android",
