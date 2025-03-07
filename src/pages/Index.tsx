@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 const Index = () => {
   useEffect(() => {
     // Set page title
-    document.title = "Shaurya Garg | Unity Developer";
+    document.title = "Shaurya Garg";
     
     // Smooth scroll for anchor links
     const handleAnchorClick = (e: MouseEvent) => {
