@@ -1,5 +1,6 @@
 
 import { useRef, useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 const skills = [
   { name: "Unity (C#)", level: 90 },
@@ -65,13 +66,14 @@ const AboutSection = () => {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center h-12 px-8 font-medium tracking-wide text-white transition duration-200 bg-primary rounded-lg hover:bg-primary/90 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center h-11 px-8 font-medium tracking-wide text-primary-foreground transition duration-200 bg-primary rounded-md hover:bg-primary/90 focus:shadow-outline focus:outline-none group hover:translate-x-1"
               >
                 Get in Touch
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center h-12 px-8 font-medium tracking-wide transition duration-200 border border-primary rounded-lg hover:bg-primary/10 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center h-11 px-8 font-medium tracking-wide transition duration-200 border border-primary rounded-md hover:bg-primary/10 focus:shadow-outline focus:outline-none"
               >
                 View Projects
               </a>

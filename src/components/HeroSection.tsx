@@ -1,5 +1,5 @@
-
 import { useEffect, useRef, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 const backgroundImages = [
   "/lovable-uploads/32c1ed10-4b05-406b-9412-174f08364440.png",
@@ -89,9 +89,10 @@ const HeroSection = () => {
           >
             <a 
               href="#projects" 
-              className="inline-flex items-center justify-center h-12 px-8 font-medium tracking-wide text-white transition duration-200 bg-primary rounded-lg hover:bg-primary/90 focus:shadow-outline focus:outline-none"
+              className="inline-flex items-center justify-center h-11 px-8 font-medium tracking-wide text-primary-foreground transition duration-200 bg-primary rounded-md hover:bg-primary/90 focus:shadow-outline focus:outline-none group hover:translate-x-1"
             >
               View Projects
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
