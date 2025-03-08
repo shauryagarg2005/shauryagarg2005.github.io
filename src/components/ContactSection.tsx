@@ -37,7 +37,7 @@ const ContactSection = () => {
     <section id="contact" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium bg-secondary text-primary-foreground rounded-full mb-4">
+        span className="inline-block px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full mb-4">
             Contact
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
