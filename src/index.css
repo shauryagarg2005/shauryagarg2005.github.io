@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -148,54 +147,26 @@
   
   /* Dark mode specific button fixes */
   .dark .bg-primary {
-    @apply text-white;
+    @apply text-primary-foreground;
   }
   
-  /* Specific fix for Get in Touch button in dark mode */
-  .dark a.inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
-    @apply text-white !important;
+  /* Dark mode styling for "View Projects" button */
+  .dark a[href="#projects"].inline-flex.items-center.justify-center {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:translate-x-1;
   }
   
-  /* Also target the Send Message button in the contact form */
-  .dark button.w-full.inline-flex.items-center.justify-center.h-12.px-6.font-medium.tracking-wide.bg-primary {
-    @apply text-white !important;
+  /* Dark mode styling for "Get in Touch" button */
+  .dark a[href="#contact"].inline-flex.items-center.justify-center {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:translate-x-1; 
   }
   
-  /* Improve "View Projects" button visibility in dark mode */
-  .dark a[href="#projects"].inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
-    @apply bg-[#333333] text-white border border-white/20 hover:bg-[#444444] !important;
+  /* Dark mode styling for "View All Projects" button */
+  .dark a[href="/projects"] button {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
   }
   
-  /* Improve "Get in Touch" button visibility in dark mode */
-  .dark a[href="#contact"].inline-flex.items-center.justify-center.h-12.px-8.font-medium.tracking-wide.bg-primary {
-    @apply bg-[#333333] text-white border border-white/20 hover:bg-[#444444] !important;
-  }
-  
-  /* Improve "About Me" button visibility in dark mode */
-  /* Fix: Changed selector to avoid circular dependency with text-primary-foreground */
-  .dark span.inline-block.px-3.py-1.text-sm.font-medium.bg-primary.rounded-full.mb-4 {
-    @apply bg-[#333333] text-white border border-white/20 !important;
-  }
-  
-  /* Improve "Play Store" button visibility in dark mode */
-  /* Fix: Changed selector to avoid circular dependency with text-white */
-  .dark a.text-xs.px-3.py-1.bg-primary.rounded-full.inline-flex.items-center.gap-1 {
-    @apply bg-[#333333] text-white border border-white/20 hover:bg-[#444444] !important;
-  }
-  
-  /* Hover states with good contrast */
-  button:hover, 
-  [type='button']:hover, 
-  [type='reset']:hover, 
-  [type='submit']:hover,
-  a.bg-primary:hover {
-    @apply text-white;
-  }
-  
-  .dark button:hover, 
-  .dark [type='button']:hover, 
-  .dark [type='reset']:hover, 
-  .dark [type='submit']:hover {
-    @apply text-white;
+  /* Dark mode styling for "My Work" and "About Me" labels */
+  .dark span.inline-block.px-3.py-1.text-sm.font-medium.bg-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors;
   }
 }
