@@ -11,7 +11,7 @@ const ProjectSection = () => {
     <section id="projects" className="py-24 sm:py-32" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full mb-4 transition-colors hover:bg-primary/90">
             My Work
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Game Projects</h2>
