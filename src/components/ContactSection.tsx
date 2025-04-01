@@ -1,9 +1,5 @@
-
 import { useState, useRef } from "react";
 import { toast } from "sonner";
-
-// Use relative URL for API endpoint to work with Vercel deployment
-const API_URL = "/api";
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
@@ -26,30 +22,27 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Send data to backend API
-      const response = await fetch(`${API_URL}/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formState),
-      });
+      // Create mailto link with form data
+      const subject = `Portfolio Contact: Message from ${formState.name}`;
+      const body = `Name: ${formState.name}%0D%0AEmail: ${formState.email}%0D%0A%0D%0AMessage:%0D%0A${formState.message}`;
+      const mailtoLink = `mailto:gargshaurya2005@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
       
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
-      }
+      // Open default mail client
+      window.location.href = mailtoLink;
       
       // Success
-      toast.success("Message sent successfully!");
-      setFormState({ name: "", email: "", message: "" });
-      if (formRef.current) {
-        formRef.current.reset();
-      }
+      toast.success("Opening email client. Please send the email to complete your message.");
+      
+      // Reset form after short delay
+      setTimeout(() => {
+        setFormState({ name: "", email: "", message: "" });
+        if (formRef.current) {
+          formRef.current.reset();
+        }
+      }, 1000);
     } catch (error) {
       console.error('Form submission error:', error);
-      toast.error("Failed to send message. Please try again.");
+      toast.error("Failed to open email client. Please try again or contact directly.");
     } finally {
       setIsSubmitting(false);
     }
