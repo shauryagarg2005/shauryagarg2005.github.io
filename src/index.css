@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,18 +104,8 @@
     }
   }
   
-  /* Improved button styling for better text visibility */
-  .bg-primary {
-    @apply text-primary-foreground;
-  }
-  
-  .bg-secondary {
-    @apply text-secondary-foreground;
-  }
-  
-  .bg-accent {
-    @apply text-accent-foreground;
-  }
+  /* Instead of using @apply which creates circular dependencies,
+     we use CSS custom properties directly */
   
   /* Default button styling */
   button, 
@@ -125,48 +116,76 @@
   }
   
   /* Buttons with light background color (#f8fafc) should have dark text (#020817) */
-  button.bg-[#f8fafc],
-  [type='button'].bg-[#f8fafc],
-  [type='reset'].bg-[#f8fafc],
-  [type='submit'].bg-[#f8fafc],
-  a.bg-[#f8fafc] {
-    @apply text-[#020817];
+  button.bg-\[\#f8fafc\],
+  [type='button'].bg-\[\#f8fafc\],
+  [type='reset'].bg-\[\#f8fafc\],
+  [type='submit'].bg-\[\#f8fafc\],
+  a.bg-\[\#f8fafc\] {
+    color: #020817;
   }
   
   /* Improve contact button visibility */
   .bg-white, .bg-background {
-    @apply text-foreground;
+    color: hsl(var(--foreground));
   }
   
-  /* Ensure primary buttons have proper text contrast */
+  /* Ensure primary buttons have proper text contrast - using custom properties directly*/
   .inline-flex.bg-primary, 
   .inline-flex.items-center.justify-center.bg-primary,
   a.bg-primary {
-    @apply text-primary-foreground;
+    color: hsl(var(--primary-foreground));
   }
   
   /* Dark mode specific button fixes */
   .dark .bg-primary {
-    @apply text-primary-foreground;
+    color: hsl(var(--primary-foreground));
   }
   
   /* Dark mode styling for "View Projects" button */
   .dark a[href="#projects"].inline-flex.items-center.justify-center {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:translate-x-1;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .dark a[href="#projects"].inline-flex.items-center.justify-center:hover {
+    background-color: hsl(var(--primary) / 0.9);
+    transform: translateX(0.25rem);
   }
   
   /* Dark mode styling for "Get in Touch" button */
   .dark a[href="#contact"].inline-flex.items-center.justify-center {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:translate-x-1; 
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .dark a[href="#contact"].inline-flex.items-center.justify-center:hover {
+    background-color: hsl(var(--primary) / 0.9);
+    transform: translateX(0.25rem);
   }
   
   /* Dark mode styling for "View All Projects" button */
   .dark a[href="/projects"] button {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  
+  .dark a[href="/projects"] button:hover {
+    background-color: hsl(var(--primary) / 0.9);
   }
   
   /* Dark mode styling for "My Work" and "About Me" labels */
   .dark span.inline-block.px-3.py-1.text-sm.font-medium.bg-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transition-property: color;
+    transition-duration: 300ms;
+  }
+  
+  .dark span.inline-block.px-3.py-1.text-sm.font-medium.bg-primary:hover {
+    background-color: hsl(var(--primary) / 0.9);
   }
 }
