@@ -37,7 +37,7 @@ const ContactSection = () => {
     <section id="contact" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
-        span className="inline-block px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full mb-4">
             Contact
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
@@ -49,6 +49,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <div className="space-y-8">
+            {/* First contact card - Email */}
             <div className="glass-panel rounded-xl p-6 shadow-sm border border-border">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -76,6 +77,7 @@ const ContactSection = () => {
               </div>
             </div>
 
+            {/* Second contact card - Location */}
             <div className="glass-panel rounded-xl p-6 shadow-sm border border-border">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -110,6 +112,7 @@ const ContactSection = () => {
               </div>
             </div>
 
+            {/* Third contact card - Phone */}
             <div className="glass-panel rounded-xl p-6 shadow-sm border border-border">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
