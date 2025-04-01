@@ -1,5 +1,8 @@
+
 import { useState, useRef } from "react";
 import { toast } from "sonner";
+
+const API_URL = "http://localhost:5000/api";
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
@@ -17,19 +20,38 @@ const ContactSection = () => {
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Send data to backend API
+      const response = await fetch(`${API_URL}/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+      
+      // Success
       toast.success("Message sent successfully!");
       setFormState({ name: "", email: "", message: "" });
       if (formRef.current) {
         formRef.current.reset();
       }
-    }, 1500);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
