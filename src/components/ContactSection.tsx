@@ -2,7 +2,8 @@
 import { useState, useRef } from "react";
 import { toast } from "sonner";
 
-const API_URL = "http://localhost:5000/api";
+// Use relative URL for API endpoint to work with Vercel deployment
+const API_URL = "/api";
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
