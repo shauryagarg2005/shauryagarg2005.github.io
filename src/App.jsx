@@ -22,7 +22,7 @@ const App = () => {
     const redirectPath = params.get('p');
     if (redirectPath) {
       // Clean search parameters and redirect
-      const cleanUrl = window.location.origin + redirectPath + 
+      const cleanUrl = window.location.origin + '/portfolio' + redirectPath + 
         (params.get('q') ? '?' + params.get('q') : '') + 
         window.location.hash;
       window.history.replaceState(null, null, cleanUrl);
@@ -44,7 +44,7 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/your-repo-name">
+        <BrowserRouter basename="/portfolio">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
