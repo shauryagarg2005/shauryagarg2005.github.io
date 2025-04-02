@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Index from "./pages/Index.jsx";
 import Projects from "./pages/Projects.jsx";
 import ProjectDetails from "./pages/ProjectDetails.jsx";
@@ -15,19 +15,28 @@ import NotFound from "./pages/NotFound.jsx";
 
 const queryClient = new QueryClient();
 
-const App = () => {
+// Handle redirects for GitHub Pages SPA
+function HandleRedirects() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
-    // Check for redirect from GitHub Pages 404.html
     const params = new URLSearchParams(window.location.search);
     const redirectPath = params.get('p');
+    const queryParams = params.get('q');
+    
     if (redirectPath) {
-      // Clean search parameters and redirect
-      const cleanUrl = window.location.origin + '/portfolio' + redirectPath + 
-        (params.get('q') ? '?' + params.get('q') : '') + 
-        window.location.hash;
-      window.history.replaceState(null, null, cleanUrl);
+      // Clean up the URL and navigate to the correct route
+      const newPath = redirectPath + (queryParams ? `?${queryParams}` : '') + window.location.hash;
+      navigate(newPath, { replace: true });
     }
+  }, [location, navigate]);
+  
+  return null;
+}
 
+const App = () => {
+  useEffect(() => {
     // Theme handling
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -45,6 +54,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter basename="/portfolio">
+          <HandleRedirects />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
