@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -14,15 +15,20 @@ import NotFound from "./pages/NotFound.jsx";
 
 const queryClient = new QueryClient();
 
-const getBasename = () => {
-  const { pathname } = window.location;
-  const pathArray = pathname.split('/');
-  if (pathArray.length <= 1) return '/';
-  return '/' + pathArray[1];
-};
-
 const App = () => {
   useEffect(() => {
+    // Check for redirect from GitHub Pages 404.html
+    const params = new URLSearchParams(window.location.search);
+    const redirectPath = params.get('p');
+    if (redirectPath) {
+      // Clean search parameters and redirect
+      const cleanUrl = window.location.origin + redirectPath + 
+        (params.get('q') ? '?' + params.get('q') : '') + 
+        window.location.hash;
+      window.history.replaceState(null, null, cleanUrl);
+    }
+
+    // Theme handling
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     
@@ -38,7 +44,7 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename={getBasename()}>
+        <BrowserRouter basename="">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
