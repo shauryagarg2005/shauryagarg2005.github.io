@@ -12,7 +12,7 @@
     // string into just a query string, and then redirects the browser
     // to the new url with only a query string and hash fragment
     
-    var pathSegmentsToKeep = 0;
+    var pathSegmentsToKeep = 1; // Change to 1 to keep the repo name in the path
     var l = window.location;
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
