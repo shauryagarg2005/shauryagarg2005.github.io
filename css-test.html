@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Test</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css">
   <style>
     .test-container {
       margin: 2rem auto;
@@ -56,6 +57,41 @@
       background-color: var(--secondary-color);
       color: var(--secondary-foreground);
     }
+
+    .image-test {
+      margin-top: 2rem;
+    }
+
+    .test-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .test-image {
+      height: 150px;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--border-color);
+    }
+
+    #test-image-1 {
+      background-image: url(./lovable-uploads/32c1ed10-4b05-406b-9412-174f08364440.png);
+    }
+
+    #test-image-2 {
+      background-image: url(./lovable-uploads/adc2c3b5-12ed-4b1d-85d6-57b487f4bd64.png);
+    }
+
+    #test-image-3 {
+      background-image: url(./lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png);
+    }
+
+    #test-image-4 {
+      background-image: url(./lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png);
+    }
   </style>
 </head>
 <body>
@@ -72,6 +108,17 @@
         <div class="theme-box primary-box">Primary Color</div>
         <div class="theme-box secondary-box">Secondary Color</div>
       </div>
+
+      <div class="image-test">
+        <h2 class="test-heading">Background Images Test</h2>
+        <p>These boxes should show your uploaded images:</p>
+        <div class="test-images">
+          <div class="test-image" id="test-image-1"></div>
+          <div class="test-image" id="test-image-2"></div>
+          <div class="test-image" id="test-image-3"></div>
+          <div class="test-image" id="test-image-4"></div>
+        </div>
+      </div>
       
       <a href="index.html" style="display: inline-block; margin-top: 2rem; color: var(--primary-color);">Back to Home</a>
     </div>
@@ -87,6 +134,16 @@
         cssStatus.textContent = 'External CSS is NOT loading correctly! ❌';
         cssStatus.classList.add('css-failed');
       }
+
+      // Check if images are loading
+      const testImages = document.querySelectorAll('.test-image');
+      testImages.forEach((img, i) => {
+        const computed = getComputedStyle(img);
+        console.log(`Test image ${i+1} background:`, computed.backgroundImage);
+        if (computed.backgroundImage === 'none' || computed.backgroundImage === '') {
+          img.innerHTML = '<div style="padding: 1rem; color: red; text-align: center;">Image failed to load!</div>';
+        }
+      });
     });
   </script>
 </body>

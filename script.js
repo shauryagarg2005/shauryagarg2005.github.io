@@ -1,4 +1,3 @@
-
 // Main JavaScript file for the portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize image slider
   initImageSlider();
+  
+  // Debug information
+  console.log("DOM fully loaded");
+  const images = document.querySelectorAll('.bg-image');
+  console.log("Background images found:", images.length);
+  images.forEach((img, i) => {
+    const computed = getComputedStyle(img);
+    console.log(`Image ${i+1} background:`, computed.backgroundImage);
+  });
 });
 
 // Theme handling
@@ -150,14 +158,15 @@ function initImageSlider() {
   
   // Show initial image
   if (backgroundImages[0]) {
-    backgroundImages[0].style.opacity = '0.7';
+    backgroundImages[0].classList.add('active');
+    console.log("Set first image as active");
   }
   
   // Set up image rotation
   setInterval(() => {
     // Hide current image
     if (backgroundImages[currentImageIndex]) {
-      backgroundImages[currentImageIndex].style.opacity = '0';
+      backgroundImages[currentImageIndex].classList.remove('active');
     }
     
     // Move to next image
@@ -165,7 +174,8 @@ function initImageSlider() {
     
     // Show next image
     if (backgroundImages[currentImageIndex]) {
-      backgroundImages[currentImageIndex].style.opacity = '0.7';
+      backgroundImages[currentImageIndex].classList.add('active');
+      console.log("Changed active image to", currentImageIndex + 1);
     }
   }, 5000);
 }
