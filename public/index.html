@@ -2,123 +2,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shaurya Garg - Game Developer</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/themeToggle.css">
-  <link rel="stylesheet" href="css/heroSection.css">
-  <link rel="stylesheet" href="css/projectSection.css">
-  <link rel="stylesheet" href="css/servicesSection.css">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaurya Garg - Game Developer Portfolio</title>
     
-    body {
-      background-color: var(--background);
-      color: var(--foreground);
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/heroSection.css">
+    <link rel="stylesheet" href="/css/projectSection.css">
+    <link rel="stylesheet" href="/css/servicesSection.css">
+    <link rel="stylesheet" href="/css/aboutSection.css">
+    <link rel="stylesheet" href="/css/contactSection.css">
+    <link rel="stylesheet" href="/css/footer.css">
     
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 50;
-    }
-    
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-  </style>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <div class="logo">
-      <a href="/">SG</a>
-    </div>
-    
-    <!-- Include theme toggle component -->
-    <div id="theme-toggle-container"></div>
-  </header>
-  
-  <main>
-    <!-- Include hero section component -->
-    <div id="hero-section-container"></div>
-    
-    <!-- Include project section component -->
-    <div id="project-section-container"></div>
-    
-    <!-- Include services section component -->
-    <div id="services-section-container"></div>
-    
-    <!-- Placeholders for other sections -->
-    <div id="about-section-container"></div>
-    <div id="contact-section-container"></div>
-  </main>
-  
-  <footer id="footer-container"></footer>
-  
-  <!-- JavaScript -->
-  <script src="js/themeToggle.js"></script>
-  <script src="js/heroSection.js"></script>
-  <script src="js/projectSection.js"></script>
-  <script src="js/servicesSection.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Load components
-      fetch('components/theme-toggle.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('theme-toggle-container').innerHTML = html;
-        });
-      
-      fetch('components/hero-section.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('hero-section-container').innerHTML = html;
-        });
-      
-      fetch('components/project-section.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('project-section-container').innerHTML = html;
-        });
-      
-      fetch('components/services-section.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('services-section-container').innerHTML = html;
-        });
-      
-      // Check for saved theme preference or use system preference
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      
-      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-        document.documentElement.classList.add("dark");
-      }
-    });
-  </script>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="logo">Shaurya Garg</a>
+            <div class="nav-links">
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <!-- ... Hero section content from previous conversion ... -->
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <!-- ... Projects section content from previous conversion ... -->
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <!-- ... Services section content from previous conversion ... -->
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <!-- ... About section content from previous conversion ... -->
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <!-- ... Contact section content from previous conversion ... -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <a href="/" class="footer-logo">Shaurya Garg</a>
+                    </div>
+                    <p class="footer-description">
+                        Crafting immersive gaming experiences with expertise in Unity development and game design.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer-links-title">Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#projects">Projects</a></li>
+                        <li class="footer-link"><a href="#services">Services</a></li>
+                        <li class="footer-link"><a href="#about">About</a></li>
+                        <li class="footer-link"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-links-title">Services</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#services">Game Development</a></li>
+                        <li class="footer-link"><a href="#services">Unity Asset Creation</a></li>
+                        <li class="footer-link"><a href="#services">Game Design</a></li>
+                        <li class="footer-link"><a href="#services">Mobile Games</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-links-title">Contact</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link">Delhi, India</li>
+                        <li class="footer-link">contact@example.com</li>
+                        <li class="footer-link">+91 123-456-7890</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Shaurya Garg. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="/js/theme.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/heroSection.js"></script>
+    <script src="/js/projectSection.js"></script>
+    <script src="/js/servicesSection.js"></script>
+    <script src="/js/aboutSection.js"></script>
+    <script src="/js/contactSection.js"></script>
+    <script src="/js/footer.js"></script>
 </body>
 </html>

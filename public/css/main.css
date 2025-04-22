@@ -1,84 +1,54 @@
 
-/* Global styles */
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Layout */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+/* Utility classes */
 .container {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-.section {
-  padding: 6rem 0;
+.hidden {
+  display: none;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--foreground);
-  margin-bottom: 1rem;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1.5rem;
-  font-weight: 500;
-  border-radius: 0.375rem;
-  transition: all 0.3s ease;
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
-.btn-primary {
+/* Selection styles */
+::selection {
   background-color: var(--primary);
   color: var(--primary-foreground);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-}
-
-/* Utilities */
-.text-center {
-  text-align: center;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-/* Responsive */
-@media (min-width: 640px) {
-  .sm\:flex-row {
-    flex-direction: row;
-  }
 }
