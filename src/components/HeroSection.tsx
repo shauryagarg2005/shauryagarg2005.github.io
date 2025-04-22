@@ -61,10 +61,13 @@ const HeroSection = () => {
         {backgroundImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center bg-no-repeat ${
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-[1500ms] ease-in-out ${
               index === currentImageIndex ? "opacity-70" : "opacity-0"
             }`}
-            style={{ backgroundImage: `url(${image})` }}
+            style={{
+              backgroundImage: `url(${image})`,
+              transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)"
+            }}
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/70 to-background" />
@@ -74,19 +77,19 @@ const HeroSection = () => {
         <div className="max-w-4xl">
           <h1 
             ref={titleRef}
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 tracking-tight transition-opacity duration-300"
+            className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 tracking-tight transition-all duration-500"
           >
             Crafting immersive game experiences
           </h1>
           <p 
             ref={subtitleRef}
-            className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 text-balance max-w-2xl transition-opacity duration-300"
+            className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 text-balance max-w-2xl transition-all duration-500"
           >
             A game developer portfolio showcasing innovative projects with a focus on gameplay mechanics and visual aesthetics.
           </p>
           <div 
             ref={ctaRef}
-            className="opacity-0 transition-opacity duration-300"
+            className="opacity-0 transition-all duration-500"
           >
             <a 
               href="#projects" 
