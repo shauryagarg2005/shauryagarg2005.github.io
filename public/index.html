@@ -4,45 +4,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Developer Portfolio</title>
+  <title>Shaurya Garg - Game Developer</title>
   
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="/public/css/variables.css">
-  <link rel="stylesheet" href="/public/css/heroSection.css">
-  <link rel="stylesheet" href="/public/css/themeToggle.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/themeToggle.css">
+  <link rel="stylesheet" href="css/heroSection.css">
+  <link rel="stylesheet" href="css/projectSection.css">
+  <link rel="stylesheet" href="css/servicesSection.css">
   
-  <!-- JavaScript Files -->
-  <script src="/public/js/heroSection.js" defer></script>
-  <script src="/public/js/themeToggle.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 50;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Theme Toggle Component -->
-  <div style="position: fixed; top: 1rem; right: 1rem; z-index: 50;">
+  <header class="header">
+    <div class="logo">
+      <a href="/">SG</a>
+    </div>
+    
+    <!-- Include theme toggle component -->
     <div id="theme-toggle-container"></div>
-  </div>
+  </header>
   
-  <!-- Hero Section Component -->
-  <div id="hero-section-container"></div>
+  <main>
+    <!-- Include hero section component -->
+    <div id="hero-section-container"></div>
+    
+    <!-- Include project section component -->
+    <div id="project-section-container"></div>
+    
+    <!-- Include services section component -->
+    <div id="services-section-container"></div>
+    
+    <!-- Placeholders for other sections -->
+    <div id="about-section-container"></div>
+    <div id="contact-section-container"></div>
+  </main>
   
+  <footer id="footer-container"></footer>
+  
+  <!-- JavaScript -->
+  <script src="js/themeToggle.js"></script>
+  <script src="js/heroSection.js"></script>
+  <script src="js/projectSection.js"></script>
+  <script src="js/servicesSection.js"></script>
   <script>
-    // Load components
     document.addEventListener('DOMContentLoaded', function() {
-      // Load ThemeToggle
-      fetch('/public/components/theme-toggle.html')
+      // Load components
+      fetch('components/theme-toggle.html')
         .then(response => response.text())
         .then(html => {
           document.getElementById('theme-toggle-container').innerHTML = html;
         });
       
-      // Load HeroSection
-      fetch('/public/components/hero-section.html')
+      fetch('components/hero-section.html')
         .then(response => response.text())
         .then(html => {
           document.getElementById('hero-section-container').innerHTML = html;
         });
+      
+      fetch('components/project-section.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('project-section-container').innerHTML = html;
+        });
+      
+      fetch('components/services-section.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('services-section-container').innerHTML = html;
+        });
+      
+      // Check for saved theme preference or use system preference
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add("dark");
+      }
     });
   </script>
 </body>
