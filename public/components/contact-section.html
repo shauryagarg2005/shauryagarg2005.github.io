@@ -1,0 +1,85 @@
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-header">
+      <span class="contact-tag">Contact</span>
+      <h2 class="contact-title">Get In Touch</h2>
+      <p class="contact-description">
+        Have a project in mind or want to discuss collaboration opportunities?
+        I'd love to hear from you! Send me a message and I'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <!-- Email Card -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="contact-card-content">
+            <h3>Email</h3>
+            <p>Gargshaurya2005@gmail.com</p>
+          </div>
+        </div>
+
+        <!-- Location Card -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="contact-card-content">
+            <h3>Location</h3>
+            <p>Delhi, India</p>
+          </div>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92V19.92C22 20.4704 21.7893 20.9987 21.4142 21.3738C21.0391 21.7489 20.5109 21.9595 19.96 21.92C16.8832 21.5855 13.9155 20.5339 11.31 18.85C8.87563 17.3147 6.82731 15.2662 5.29 12.83C3.59998 10.2412 2.54824 7.27099 2.12 4.18C2.09501 3.90347 2.12788 3.62476 2.21649 3.36162C2.30511 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.05006 2.28271 3.30421 2.17052C3.55835 2.05833 3.83296 2.00026 4.11 2H7.11C7.59531 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04208 3.23945 9.11 3.72C9.23651 4.68007 9.47149 5.62273 9.81 6.53C9.94454 6.88792 9.97366 7.27691 9.89391 7.65088C9.81416 8.02485 9.62886 8.36811 9.36 8.64L8.09 9.91C9.51355 12.4135 11.5865 14.4865 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9752 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5285 19.3199 14.7635 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="contact-card-content">
+            <h3>Phone</h3>
+            <p>+91 9654302489</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Your message here..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-loading hidden">
+            <svg class="animate-spin" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Sending...
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

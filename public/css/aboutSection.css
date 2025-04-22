@@ -1,0 +1,138 @@
+
+.about-section {
+  padding: 6rem 0;
+  background-color: var(--secondary-light);
+}
+
+.about-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.about-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.about-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skills-card,
+.expertise-card {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skills-title,
+.expertise-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 500;
+}
+
+.skill-percentage {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+.skill-bar {
+  height: 0.5rem;
+  background-color: var(--secondary);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 9999px;
+  transition: width 1s ease-out;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.expertise-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.expertise-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: var(--muted-foreground);
+}
+
+.expertise-list li {
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .about-title {
+    font-size: 2.25rem;
+  }
+  
+  .expertise-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
