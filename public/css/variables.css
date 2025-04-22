@@ -1,0 +1,35 @@
+
+:root {
+  /* Color variables */
+  --background: #ffffff;
+  --background-rgb: 255, 255, 255;
+  --foreground: #0f1729;
+  
+  --primary: #8b5cf6;
+  --primary-hover: rgba(139, 92, 246, 0.9);
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f3f4f6;
+  --secondary-hover: #e5e7eb;
+  --muted-foreground: #6b7280;
+  
+  --border: #e5e7eb;
+  --font-display: 'Playfair Display', serif;
+}
+
+/* Dark Mode Colors */
+.dark {
+  --background: #0f1729;
+  --background-rgb: 15, 23, 41;
+  --foreground: #ffffff;
+  
+  --primary: #9b87f5;
+  --primary-hover: rgba(155, 135, 245, 0.9);
+  --primary-foreground: #ffffff;
+  
+  --secondary: #1f2937;
+  --secondary-hover: #374151;
+  --muted-foreground: #9ca3af;
+  
+  --border: #1f2937;
+}

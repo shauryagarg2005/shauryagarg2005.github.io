@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Developer Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/public/css/variables.css">
+  <link rel="stylesheet" href="/public/css/heroSection.css">
+  <link rel="stylesheet" href="/public/css/themeToggle.css">
+  
+  <!-- JavaScript Files -->
+  <script src="/public/js/heroSection.js" defer></script>
+  <script src="/public/js/themeToggle.js" defer></script>
+</head>
+<body>
+  <!-- Theme Toggle Component -->
+  <div style="position: fixed; top: 1rem; right: 1rem; z-index: 50;">
+    <div id="theme-toggle-container"></div>
+  </div>
+  
+  <!-- Hero Section Component -->
+  <div id="hero-section-container"></div>
+  
+  <script>
+    // Load components
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load ThemeToggle
+      fetch('/public/components/theme-toggle.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('theme-toggle-container').innerHTML = html;
+        });
+      
+      // Load HeroSection
+      fetch('/public/components/hero-section.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('hero-section-container').innerHTML = html;
+        });
+    });
+  </script>
+</body>
+</html>
