@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shaurya Garg</title>
-    <meta name="description" content="Shaurya Garg's Portfolio - Game Developer" />
-    <meta name="author" content="Shaurya Garg" />
-    <meta property="og:image" content="./og-image.png" />
+    <title>Shaurya Garg - Game Developer</title>
+    <meta name="description" content="Portfolio of Shaurya Garg, Game Developer specializing in Unity and C#" />
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/project-cards.css">
   </head>
 
   <body>
@@ -51,23 +51,23 @@
       <!-- Hero Section -->
       <section class="hero-section">
         <div class="hero-background">
-          <div class="bg-image" id="bg-image-1"></div>
-          <div class="bg-image" id="bg-image-2"></div>
-          <div class="bg-image" id="bg-image-3"></div>
-          <div class="bg-image" id="bg-image-4"></div>
+          <div id="bg-image-1" class="bg-image"></div>
+          <div id="bg-image-2" class="bg-image"></div>
+          <div id="bg-image-3" class="bg-image"></div>
+          <div id="bg-image-4" class="bg-image"></div>
           <div class="bg-gradient"></div>
         </div>
         
         <div class="hero-content">
           <div class="hero-text">
             <h1 id="hero-title" class="hero-title">Crafting immersive game experiences</h1>
-            <p id="hero-subtitle" class="hero-subtitle">
-              A game developer portfolio showcasing innovative projects with a focus on gameplay mechanics and visual aesthetics.
-            </p>
+            <p id="hero-subtitle" class="hero-subtitle">A game developer portfolio showcasing innovative projects with a focus on gameplay mechanics and visual aesthetics.</p>
             <div id="hero-cta" class="hero-cta">
               <a href="#projects" class="cta-button">
                 View Projects
-                <span class="arrow-right"></span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </a>
             </div>
           </div>
@@ -75,7 +75,7 @@
         
         <div class="scroll-indicator">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       </section>
@@ -86,28 +86,23 @@
           <div class="section-header">
             <span class="section-tag">My Work</span>
             <h2 class="section-title">Featured Game Projects</h2>
-            <p class="section-subtitle">
-              A collection of games that showcase my skills in game development, 
-              from designing engaging mechanics to creating immersive worlds.
-            </p>
+            <p class="section-subtitle">A collection of games that showcase my skills in game development, from designing engaging mechanics to creating immersive worlds.</p>
           </div>
           
           <div class="projects-showcase">
             <div class="projects-card">
               <div class="card-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 12L13 12M21 6L13 6M21 18L13 18M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12ZM7 6C7 6.55228 6.55228 7 6 7C5.44772 7 5 6.55228 5 6C5 5.44772 5.44772 5 6 5C6.55228 5 7 5.44772 7 6ZM7 18C7 18.5523 6.55228 19 6 19C5.44772 19 5 18.5523 5 18C5 17.4477 5.44772 17 6 17C6.55228 17 7 17.4477 7 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 12L13 12M21 6L13 6M21 18L13 18M7 12C7 12.5523 6.55228 13 6 13C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11C6.55228 11 7 11.4477 7 12ZM7 6C7 6.55228 6.55228 7 6 7C5.44772 7 5 6.55228 5 6C5 5.44772 5.44772 5 6 5C6.55228 5 7 5.44772 7 6ZM7 18C7 18.5523 6.55228 19 6 19C5.44772 19 5 18.5523 5 18C5 17.4477 5.44772 17 6 17C6.55228 17 7 17.4477 7 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <h3 class="card-title">Explore My Game Portfolio</h3>
-              <p class="card-description">
-                View my complete collection of game development projects, including 
-                released titles and works in progress. Each project showcases different 
-                aspects of game design, programming, and visual aesthetics.
-              </p>
+              <p class="card-description">View my complete collection of game development projects, including released titles and works in progress.</p>
               <a href="projects.html" class="card-button">
                 View All Projects
-                <span class="arrow-right"></span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </a>
             </div>
           </div>
@@ -119,11 +114,9 @@
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">Services</h2>
-            <p class="section-subtitle">
-              Comprehensive game development services to bring your vision to life with quality and attention to detail.
-            </p>
+            <p class="section-subtitle">Comprehensive game development services to bring your vision to life with quality and attention to detail.</p>
           </div>
-
+          
           <div class="services-grid">
             <div class="service-card">
               <div class="service-icon icon-gamepad"></div>
@@ -159,29 +152,35 @@
         </div>
       </section>
 
-      <!-- About Section Placeholder -->
-      <section id="about" class="about-section">
+      <!-- About Section -->
+      <section id="about" class="page-section">
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">
-              Game developer passionate about creating immersive experiences.
-            </p>
+            <p class="section-subtitle">Game developer passionate about creating immersive experiences</p>
           </div>
-          <!-- About content would go here -->
-        </div>
-      </section>
-
-      <!-- Contact Section Placeholder -->
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-subtitle">
-              Get in touch for collaboration or inquiries.
-            </p>
+          
+          <div class="about-content">
+            <div class="about-image">
+              <img src="./lovable-uploads/32c1ed10-4b05-406b-9412-174f08364440.png" alt="Shaurya Garg - Game Developer">
+            </div>
+            <div class="about-text">
+              <p>Hello! I'm Shaurya Garg, a passionate game developer with a focus on creating engaging and immersive gaming experiences. With several years of experience in game design and development, I specialize in crafting games that combine innovative gameplay mechanics with captivating visual aesthetics.</p>
+              
+              <p>My journey in game development began with a fascination for how interactive entertainment can create unique emotional connections with players. Since then, I've developed numerous mobile and PC games, ranging from hyper-casual arcade titles to more complex racing and puzzle games.</p>
+              
+              <p>I'm constantly exploring new technologies and techniques to push the boundaries of what's possible in game development, while maintaining a strong focus on user experience and accessibility.</p>
+              
+              <div class="skill-tags">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Game Design</span>
+                <span class="skill-tag">3D Modeling</span>
+                <span class="skill-tag">Mobile Development</span>
+                <span class="skill-tag">UI/UX Design</span>
+              </div>
+            </div>
           </div>
-          <!-- Contact form would go here -->
         </div>
       </section>
 
@@ -190,7 +189,7 @@
         <div class="container">
           <div class="footer-content">
             <div class="footer-copyright">
-              <p>&copy; 2025 Shaurya Garg. All rights reserved.</p>
+              <p>&copy; <span id="current-year"></span> Shaurya Garg. All rights reserved.</p>
             </div>
             <div class="footer-social">
               <!-- Social links would go here -->
@@ -201,6 +200,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="./js/footer.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

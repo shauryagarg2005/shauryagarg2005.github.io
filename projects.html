@@ -7,6 +7,7 @@
     <title>Projects - Shaurya Garg</title>
     <meta name="description" content="Game Development Projects by Shaurya Garg" />
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/project-cards.css">
   </head>
 
   <body>
@@ -51,61 +52,12 @@
       <section class="page-section">
         <div class="container">
           <div class="section-header">
-            <h1 class="section-title">Projects</h1>
-            <p class="section-subtitle">A collection of my game development work</p>
+            <h1 class="section-title">Game Projects</h1>
+            <p class="section-subtitle">Explore my portfolio of game development projects</p>
           </div>
           
-          <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-              <div class="project-image-container">
-                <div class="project-image-overlay"></div>
-                <img src="./lovable-uploads/ba0f61c7-1a4e-48dd-8a5f-929ec68be611.png" alt="Spike Jukes" class="project-image">
-                <div class="project-badges">
-                  <span class="project-badge project-badge-primary">Released</span>
-                  <span class="project-badge project-badge-secondary">Android</span>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Spike Jukes</h3>
-                <p class="project-description">Hyper-casual arcade game where players control a ball, dodging spikes while aiming for a high score.</p>
-                <a href="#" class="project-link">View Details <span class="arrow-right"></span></a>
-              </div>
-            </div>
-            
-            <!-- Project Card 2 -->
-            <div class="project-card">
-              <div class="project-image-container">
-                <div class="project-image-overlay"></div>
-                <img src="./lovable-uploads/ac7a7f66-d674-4376-bbd0-866715b07afb.png" alt="Skyway Stunts" class="project-image">
-                <div class="project-badges">
-                  <span class="project-badge project-badge-primary">Released</span>
-                  <span class="project-badge project-badge-secondary">Android</span>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Skyway Stunts</h3>
-                <p class="project-description">Racing & stunt-based driving game featuring realistic physics, jumps, drifts, and precision driving.</p>
-                <a href="#" class="project-link">View Details <span class="arrow-right"></span></a>
-              </div>
-            </div>
-            
-            <!-- Project Card 3 -->
-            <div class="project-card">
-              <div class="project-image-container">
-                <div class="project-image-overlay"></div>
-                <img src="./lovable-uploads/6c39176d-561d-4120-9a68-f0f03a9181fb.png" alt="Color Block Jam" class="project-image">
-                <div class="project-badges">
-                  <span class="project-badge project-badge-primary">In Development</span>
-                  <span class="project-badge project-badge-secondary">Android</span>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Color Block Jam</h3>
-                <p class="project-description">Puzzle/hyper-casual game where players match colored blocks by moving them into correct slots.</p>
-                <a href="#" class="project-link">View Details <span class="arrow-right"></span></a>
-              </div>
-            </div>
+          <div class="projects-grid" id="projects-container">
+            <!-- Project cards will be dynamically added here -->
           </div>
         </div>
       </section>
@@ -115,7 +67,7 @@
         <div class="container">
           <div class="footer-content">
             <div class="footer-copyright">
-              <p>&copy; 2025 Shaurya Garg. All rights reserved.</p>
+              <p>&copy; <span id="current-year"></span> Shaurya Garg. All rights reserved.</p>
             </div>
             <div class="footer-social">
               <!-- Social links would go here -->
@@ -126,6 +78,8 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="./js/footer.js"></script>
     <script src="./script.js"></script>
+    <script src="./js/projects.js"></script>
   </body>
 </html>
